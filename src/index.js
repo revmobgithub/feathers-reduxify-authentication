@@ -147,7 +147,7 @@ export default (app, options = {}) => {
     // ACTION CREATORS
     // Note: action.payload in reducer will have the value of .data below
     authenticate: createAction(
-      AUTHENTICATE, (p) => ({ promise: app.authenticate(p), data: undefined })
+      AUTHENTICATE, (p, r) => ({ promise: app.authenticate(p, r ?? {}), data: undefined })
     ),
     logout: createAction(LOGOUT),
     user: createAction(USER),
