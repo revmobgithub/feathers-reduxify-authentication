@@ -142,6 +142,13 @@ export default (app, options = {}) => {
         user = { ...user, ...action.payload };
       }
 
+      if (action.payload.isRefreshingUser) {
+        return {
+          ...state,
+          [opts.user]: user,
+        };
+      }
+
       return {
         ...state,
         [opts.isError]: null,
